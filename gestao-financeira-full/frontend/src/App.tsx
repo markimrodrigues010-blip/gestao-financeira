@@ -3,15 +3,14 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
-// 💡 SOLUÇÃO: A importação DEVE SER EXATAMENTE ASSIM:
-import RegisterPage from './pages/RegisterPage.tsx'; 
+import RegisterPage from './pages/RegisterPage.tsx'; // 💡 CORREÇÃO: Importação e extensão corretas
 
 export default function App(){
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} /> 
+        <Route path="/register" element={<RegisterPage />} /> // 💡 Nova Rota
         <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
     </BrowserRouter>
