@@ -1,6 +1,6 @@
-
 import { useState } from "react";
 import api from "../api";
+import { Link } from "react-router-dom"; // 💡 ADICIONEI ESTA LINHA
 
 export default function LoginPage(){
   const[email,setEmail]=useState("");
@@ -21,6 +21,11 @@ export default function LoginPage(){
         <input placeholder="Senha" type="password" onChange={e=>setPassword(e.target.value)} />
         <br/><br/>
         <button onClick={login}>Entrar</button>
+        
+        {/* 💡 ADICIONEI ESTA SEÇÃO PARA O LINK */}
+        <p style={{marginTop: 15}}>
+            Não tem conta? <Link to="/register" style={{color:'var(--primary)', textDecoration: 'none'}}>Criar uma agora!</Link>
+        </p>
       </div>
     </div>
   );
