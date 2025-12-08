@@ -1,5 +1,6 @@
-
 import axios from "axios";
+
 export default axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL
+  // Colocamos o link direto aqui
+  baseURL: "https://gestao-financeira-flxl.onrender.com/api"
 });
