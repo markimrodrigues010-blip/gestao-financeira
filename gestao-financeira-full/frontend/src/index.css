@@ -1,0 +1,9 @@
+
+:root {
+  --primary:#ffd600;
+  --primary-dark:#e5c100;
+  --bg:#000;
+  --text:#fff;
+}
+body { background:var(--bg); color:var(--text); margin:0; font-family:sans-serif; }
+button{ background:var(--primary); border:0; padding:10px 20px; border-radius:6px; }
