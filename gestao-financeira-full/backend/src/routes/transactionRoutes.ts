@@ -1,11 +1,14 @@
+import express from 'express';
+import { getTransactions, addTransaction, deleteTransaction } from '../controllers/transactionController';
+import { protect } from '../middleware/authMiddleware';
 
-import { Router } from "express";
-import { authMiddleware } from "../middleware/authMiddleware";
-import { createTransaction, listTransactions } from "../controllers/transactionController";
+const router = express.Router();
 
-const router = Router();
-router.use(authMiddleware);
-router.post("/", createTransaction);
-router.get("/", listTransactions);
+router.route('/')
+  .get(protect, getTransactions)
+  .post(protect, addTransaction);
+
+router.route('/:id')
+  .delete(protect, deleteTransaction);
 
 export default router;
