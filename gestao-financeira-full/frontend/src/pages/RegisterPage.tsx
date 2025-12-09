@@ -13,8 +13,8 @@ export default function RegisterPage(){
     setMessage(""); 
     
     try {
-        // Envia os dados para a nova rota /api/auth/register
-        const r = await api.post("/auth/register", { name, email, password });
+        // 💡 CORREÇÃO AQUI: A rota completa agora é "/api/auth/register"
+        const r = await api.post("/api/auth/register", { name, email, password });
         
         setMessage("Conta criada com sucesso! Redirecionando para o Dashboard...");
         
